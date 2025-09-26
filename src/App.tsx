@@ -1,10 +1,6 @@
 import logo from "./assets/logo.png";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import HorecaConsulting from "./pages/HorecaConsulting";
-
-import ChiSiamo from "/pages/ChiSiamo";
-import Contatti from "/pages/Contatti";
 
 function App() {
   return (
