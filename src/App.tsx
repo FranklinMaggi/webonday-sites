@@ -1,6 +1,9 @@
 import logo from "./assets/logo.png";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
+import HorecaConsulting from "./pages/HorecaConsulting";
+import ChiSiamo from "./pages/ChiSiamo";
+import Contatti from "./pages/Contatti";
 
 function App() {
   return (
@@ -14,18 +17,10 @@ function App() {
               <span className="text-xl font-bold text-blue-600">WebOnDay</span>
             </div>
             <ul className="hidden md:flex gap-6 font-medium text-gray-700">
-              <li>
-                <Link to="/" className="hover:text-blue-600 transition">Home</Link>
-              </li>
-              <li>
-                <Link to="/consulenza-horeca" className="hover:text-blue-600 transition">Consulenze</Link>
-              </li>
-              <li>
-                <Link to="/chi-siamo" className="hover:text-blue-600 transition">Chi Siamo</Link>
-              </li>
-              <li>
-                <Link to="/contatti" className="hover:text-blue-600 transition">Contatti</Link>
-              </li>
+              <li><Link to="/" className="hover:text-blue-600 transition">Home</Link></li>
+              <li><Link to="/consulenza-horeca" className="hover:text-blue-600 transition">Consulenze</Link></li>
+              <li><Link to="/chi-siamo" className="hover:text-blue-600 transition">Chi Siamo</Link></li>
+              <li><Link to="/contatti" className="hover:text-blue-600 transition">Contatti</Link></li>
             </ul>
             <Link
               to="/contatti"
@@ -36,7 +31,7 @@ function App() {
           </div>
         </nav>
 
-        {/* CONTENUTO DELLE PAGINE */}
+        {/* ROUTES */}
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -64,7 +59,7 @@ function App() {
               <h4 className="text-white font-semibold mb-3">Contatti</h4>
               <ul className="space-y-2">
                 <li><a href="mailto:info@webonday.it" className="hover:text-white">info@webonday.it</a></li>
-                <li><a href="tel:+393801888965" className="hover:text-white">+39 3801888965</a></li>
+                <li><a href="tel:+393801888965" className="hover:text-white">+39 380 1888965</a></li>
               </ul>
             </div>
             <div>
