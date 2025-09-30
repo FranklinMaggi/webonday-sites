@@ -1,7 +1,8 @@
 import logo from "./assets/logo.png";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import HorecaConsulting from "./pages/HorecaConsulting";
+import DigitalMarketing from "./pages/DigitalMarketing";
+import PersonalTraining from "./pages/PersonalTraining";
 import ChiSiamo from "./pages/ChiSiamo";
 import Contatti from "./pages/Contatti";
 
@@ -35,7 +36,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/consulenza-horeca" element={<HorecaConsulting />} />
+            <Route path="/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/personal-training" element={<PersonalTraining />} />
             <Route path="/chi-siamo" element={<ChiSiamo />} />
             <Route path="/contatti" element={<Contatti />} />
           </Routes>
