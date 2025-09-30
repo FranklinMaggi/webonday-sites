@@ -19,7 +19,6 @@ function App() {
             </div>
             <ul className="hidden md:flex gap-6 font-medium text-gray-700">
               <li><Link to="/" className="hover:text-blue-600 transition">Home</Link></li>
-              <li><Link to="/consulenza-horeca" className="hover:text-blue-600 transition">Consulenze</Link></li>
               <li><Link to="/chi-siamo" className="hover:text-blue-600 transition">Chi Siamo</Link></li>
               <li><Link to="/contatti" className="hover:text-blue-600 transition">Contatti</Link></li>
             </ul>
@@ -36,10 +35,10 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/digital-marketing" element={<DigitalMarketing />} />
-            <Route path="/personal-training" element={<PersonalTraining />} />
             <Route path="/chi-siamo" element={<ChiSiamo />} />
             <Route path="/contatti" element={<Contatti />} />
+            <Route path="/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/personal-training" element={<PersonalTraining />} />
           </Routes>
         </main>
 
