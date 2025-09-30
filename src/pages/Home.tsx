@@ -59,10 +59,11 @@ export default function Home() {
 
           <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center text-center">
             <Briefcase className="w-12 h-12 text-gray-700 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Consulenze Ho.Re.Ca.</h3>
-            <p className="text-gray-600">
-              Soluzioni digitali per hotel, ristorazione e condomini.
-            </p>
+            <h3 className="text-xl font-semibold mb-2">Consulenze Digital Marketing</h3>
+<p className="text-gray-600">
+  Strategie e know-how per aziende moderne. Visibilità e crescita online.
+</p>
+
           </div>
 
           <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center text-center">
