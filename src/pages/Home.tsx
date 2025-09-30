@@ -8,7 +8,7 @@ const services = [
     bg: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1600&q=80",
   },
   {
-    text: "Consulenze digitali per il settore Ho.Re.Ca.",
+    text: "Consulenze Digital Marketing & Know-How",
     bg: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1600&q=80",
   },
   {
@@ -20,7 +20,6 @@ const services = [
 export default function Home() {
   const [index, setIndex] = useState(0);
 
-  // cambia slide ogni 5 secondi
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % services.length);
@@ -49,28 +48,31 @@ export default function Home() {
       <main className="py-20 px-6 max-w-6xl mx-auto grid gap-12">
         <h2 className="text-3xl font-bold text-center mb-12">I nostri servizi</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center text-center">
+          {/* Siti Web */}
+          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
             <Globe className="w-12 h-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Siti Web</h3>
             <p className="text-gray-600">
-              Creiamo siti professionali e leggeri. Email aziendale inclusa.
+              Pacchetto base: sviluppo siti rapidi, leggeri e professionali. Email aziendale inclusa.
             </p>
           </div>
 
-          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center text-center">
+          {/* Digital Marketing */}
+          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
             <Briefcase className="w-12 h-12 text-gray-700 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Consulenze Digital Marketing</h3>
-<p className="text-gray-600">
-  Strategie e know-how per aziende moderne. Visibilità e crescita online.
-</p>
-
+            <h3 className="text-xl font-semibold mb-2">Digital Marketing</h3>
+            <p className="text-gray-600">
+              Consulenze strategiche: branding, SEO, social ads, roadmap digitale. 
+              (Sviluppo sito escluso).
+            </p>
           </div>
 
-          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center text-center">
+          {/* Personal Training */}
+          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
             <Dumbbell className="w-12 h-12 text-emerald-500 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Personal Training</h3>
             <p className="text-gray-600">
-              Il tuo coach sempre disponibile, anche in azienda.
+              Collaborazioni per palestre e coach: servizi digitali e organizzativi.
             </p>
           </div>
         </div>
