@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 
 const heroSlides = [
-        { img: "/WebOnDayHeader.png" },
-        { img: "/MissionHeader.png" },
-        { img: "/MissionHeader1.png" },
-        { img: "/MissionHeader2.png" },
-        { img: "/MissionHeader3.png" },
+  { img: "/WebOnDayHeader.png" },
+  { img: "/MissionHeader.png" },
+  { img: "/MissionHeader1.png" },
+  { img: "/MissionHeader2.png" },
+  { img: "/MissionHeader3.png" },
 ];
 
 export default function Mission() {
@@ -15,88 +15,91 @@ export default function Mission() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000); // cambia slide ogni 5 secondi
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* HERO ROTANTE */}
-      <div className="relative h-[80vh] overflow-hidden">
+    <div className="bg-gray-950 text-white min-h-screen relative">
+      {/* HERO ROTANTE FUTURISTICO */}
+      <div className="relative h-[70vh] overflow-hidden">
         <img
           src={heroSlides[index].img}
           alt="Mission Hero"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1500"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 transition-opacity duration-1500"
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-800/70 via-blue-800/70 to-pink-800/70 mix-blend-overlay"></div>
+        <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.2),transparent_70%)]"></div>
       </div>
 
-      {/* TITOLO SEPARATO */}
-      <div className="text-center py-12 bg-gray-50">
-        <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
-          La nostra Mission
+      {/* TITOLO */}
+      <div className="text-center py-12 relative z-10">
+        <h1 className="text-5xl md:text-6xl font-extrabold neon-title mb-4">
+          Mission 2025
         </h1>
-        <p className="text-xl font-medium text-gray-700">
-          Digitalizzare in modo etico, sostenibile e comunicativo
+        <p className="text-lg md:text-xl max-w-3xl mx-auto neon-bubble">
+          Nel 2025 costruiamo strumenti digitali concreti, con lo sguardo già
+          proiettato verso il 2045: un mondo in cui **business e metaverso** si
+          intrecciano senza confini.
         </p>
       </div>
 
-      {/* CONTENT */}
+      {/* CONTENUTO */}
       <div className="max-w-5xl mx-auto px-6 py-20 space-y-16">
         {/* Intro */}
         <section className="text-center">
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-300 neon-bubble inline-block">
             Crediamo in una digitalizzazione{" "}
-            <span className="text-amber-700 font-semibold">
-              pulita, concreta e sostenibile
-            </span>
-            , capace di creare un ecosistema semplice e comunicativo.  
-            La nostra missione è aiutare aziende e professionisti a costruire strumenti digitali 
-            che migliorino la relazione con i clienti, anche da remoto, senza mai perdere il lato umano.
+            <span className="text-cyan-400 font-semibold">etica e sostenibile</span>, 
+            che parte da oggi ma guarda al futuro.  
+            Nel 2045 la tecnologia non sarà più solo uno strumento: sarà una
+            **dimensione condivisa** dove aziende e persone potranno incontrarsi,
+            creare valore e comunicare senza barriere.
           </p>
         </section>
 
         {/* Valori */}
         <section className="grid md:grid-cols-2 gap-10">
-          <div className="p-8 bg-white rounded-2xl shadow">
-            <h2 className="text-2xl font-bold text-amber-700 mb-3">🌱 Eco & Green</h2>
-            <p className="text-gray-600">
-              Riduciamo sprechi e processi ridondanti grazie al digitale, 
-              semplificando la gestione e ottimizzando le risorse.
+          <div className="p-8 rounded-2xl border border-cyan-400 neon-panel">
+            <h2 className="text-2xl font-bold text-cyan-300 mb-3">🌱 Green by Design</h2>
+            <p className="text-gray-300">
+              Ogni scelta digitale riduce sprechi e ottimizza risorse.  
+              Nel 2045 il digitale sarà il nostro ecosistema più pulito.
             </p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow">
-            <h2 className="text-2xl font-bold text-amber-700 mb-3">🤝 Comunicazione chiara</h2>
-            <p className="text-gray-600">
-              Digitalizzare non significa delegare tutto a un computer, 
-              ma migliorare la comunicazione e creare rapporti più trasparenti e duraturi.
+          <div className="p-8 rounded-2xl border border-pink-400 neon-panel">
+            <h2 className="text-2xl font-bold text-pink-300 mb-3">🤝 Human Touch</h2>
+            <p className="text-gray-300">
+              Anche nel metaverso la vera forza resta l’empatia: 
+              tecnologie futuristiche al servizio di relazioni autentiche.
             </p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow">
-            <h2 className="text-2xl font-bold text-amber-700 mb-3">💻 Remote Ready</h2>
-            <p className="text-gray-600">
-              Strumenti digitali che funzionano ovunque: gestisci clienti, team e progetti anche a distanza, 
-              con la stessa efficienza dell’ufficio.
+          <div className="p-8 rounded-2xl border border-indigo-400 neon-panel">
+            <h2 className="text-2xl font-bold text-indigo-300 mb-3">💻 Remote & Meta-Ready</h2>
+            <p className="text-gray-300">
+              Dal 2025 costruiamo strumenti che funzionano ovunque: domani li useremo 
+              anche negli spazi virtuali immersivi.
             </p>
           </div>
-          <div className="p-8 bg-white rounded-2xl shadow">
-            <h2 className="text-2xl font-bold text-amber-700 mb-3">🌍 Ecosistema digitale</h2>
-            <p className="text-gray-600">
-              Creiamo piattaforme integrate, dove siti, app e database lavorano insieme, 
-              rendendo la tua azienda più fluida e competitiva.
+          <div className="p-8 rounded-2xl border border-amber-400 neon-panel">
+            <h2 className="text-2xl font-bold text-amber-300 mb-3">🌍 Ecosistemi Ibridi</h2>
+            <p className="text-gray-300">
+              Oggi integriamo siti, app e database; domani integreremo universi digitali 
+              e realtà parallele.
             </p>
           </div>
         </section>
 
         {/* Closing */}
         <section className="text-center">
-          <h2 className="text-3xl font-bold text-amber-700 mb-4">
-            Un futuro digitale sostenibile
+          <h2 className="text-3xl font-bold text-fuchsia-300 neon-title mb-4">
+            Un futuro digitale inizia adesso
           </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            La nostra missione è accompagnarti in un percorso digitale etico e concreto, 
-            che unisce innovazione e rispetto per l’ambiente.  
-            Con WebOnDay, ogni scelta digitale è un passo verso un futuro più pulito e connesso.
+          <p className="text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Siamo nel 2025, ma lavoriamo come se fossimo già nel 2045.  
+            Ogni progetto è un ponte tra presente e futuro, tra realtà e metaverso.  
+            Con WebOnDay ogni scelta digitale diventa un passo concreto 
+            verso un domani senza limiti.
           </p>
         </section>
       </div>

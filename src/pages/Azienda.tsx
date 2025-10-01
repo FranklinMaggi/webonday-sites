@@ -1,20 +1,46 @@
 // src/pages/Azienda.tsx
 export default function Azienda() {
     const roadmap = [
-      "Creazione pagina web come biglietto da visita",
-      "Digitalizzare le prime 50 aziende partners e raccogliere risultati",
-      "Piattaforma solida di pagamenti e sicura",
-      "Decentralizzazione di Internet e NFT",
-      "Creazione token personale con white paper",
-      "Piattaforma di exchange per Crypto emergenti (collegamento, creazione di wallets crypto tramite API e Dapps)",
-      "Digitalizzare le prossime 450 aziende e raggiungere 500 partners",
-      "Lanciare sul mercato PalApps (piattaforma di gestione immobiliare) su scala globale",
-      "Creare 2000 posti di lavoro",
-      "Ultimo ma non ultimo: migliorare sempre",
+      { text: "Creazione pagina web come biglietto da visita", status: "done" },
+      { text: "Digitalizzare le prime 50 aziende partners e raccogliere risultati", status: "in-progress" },
+      { text: "Piattaforma solida di pagamenti e sicura", status: "pending" },
+      { text: "Decentralizzazione di Internet e NFT", status: "pending" },
+      { text: "Creazione token personale con white paper", status: "pending" },
+      { text: "Piattaforma di exchange per Crypto emergenti (collegamento, creazione di wallets crypto tramite API e Dapps)", status: "pending" },
+      { text: "Digitalizzare le prossime 450 aziende e raggiungere 500 partners", status: "pending" },
+      { text: "Lanciare sul mercato PalApps (piattaforma di gestione immobiliare) su scala globale", status: "pending" },
+      { text: "Creare 2000 posti di lavoro", status: "pending" },
+      { text: "Ultimo ma non ultimo: migliorare sempre", status: "pending" },
     ];
   
+    const getStepIcon = (status: string, index: number) => {
+      switch (status) {
+        case "done":
+          return (
+            <div className="w-8 h-8 rounded-full bg-green-500 border-4 border-white shadow flex items-center justify-center text-white font-bold">
+              ✔
+            </div>
+          );
+        case "in-progress":
+          return (
+            <div className="w-8 h-8 rounded-full bg-yellow-400 border-4 border-white shadow flex items-center justify-center text-white font-bold">
+              ⏳
+            </div>
+          );
+        default:
+          return (
+            <div className="w-8 h-8 rounded-full bg-blue-600 border-4 border-white shadow flex items-center justify-center text-white font-bold">
+              {index + 1}
+            </div>
+          );
+      }
+    };
+  
     return (
-      <div className="bg-gray-50 min-h-screen">
+      <div className="relative bg-gray-50 min-h-screen overflow-hidden">
+        {/* SFONDO LUMINESCENTE */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-20 blur-3xl animate-pulse"></div>
+  
         {/* HERO */}
         <div className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden">
           <img
@@ -29,7 +55,7 @@ export default function Azienda() {
         </div>
   
         {/* INTRO */}
-        <div className="max-w-4xl mx-auto px-6 py-16 text-center">
+        <div className="relative max-w-4xl mx-auto px-6 py-16 text-center">
           <h2 className="text-3xl font-bold text-blue-600 mb-6">Roadmap</h2>
           <p className="text-gray-700 text-lg">
             Ogni impresa nasce da un’idea, ma cresce con una visione chiara.
@@ -42,7 +68,7 @@ export default function Azienda() {
         {/* TIMELINE */}
         <div className="relative max-w-4xl mx-auto px-6 pb-20">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-200 h-full"></div>
-          <ul className="space-y-12">
+          <ul className="space-y-12 relative z-10">
             {roadmap.map((step, i) => (
               <li
                 key={i}
@@ -51,7 +77,9 @@ export default function Azienda() {
                 }`}
               >
                 <div className="w-1/2"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-blue-600 border-4 border-white shadow"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2">
+                  {getStepIcon(step.status, i)}
+                </div>
                 <div
                   className={`w-1/2 p-6 rounded-xl shadow bg-white ${
                     i % 2 === 0 ? "ml-8 text-left" : "mr-8 text-right"
@@ -60,7 +88,7 @@ export default function Azienda() {
                   <h3 className="text-lg font-semibold text-blue-700">
                     Step {i + 1}
                   </h3>
-                  <p className="text-gray-600 mt-2">{step}</p>
+                  <p className="text-gray-600 mt-2">{step.text}</p>
                 </div>
               </li>
             ))}

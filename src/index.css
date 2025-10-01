@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-4 py-2 bg-blue-600 text-white rounded-lg 
+           font-medium shadow hover:bg-blue-700 hover:shadow-lg 
+           transition duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-4 py-2 bg-gray-200 text-gray-800 rounded-lg 
+           font-medium hover:bg-gray-300 transition duration-200;
+  }
+}
+.neon-title {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0,255,255,0.8), 
+                 0 0 20px rgba(0,255,255,0.6), 
+                 0 0 40px rgba(0,255,255,0.4);
+  }
+  
+  .neon-bubble {
+    position: relative;
+    padding: 1rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+  }
+  
+  .neon-panel {
+    box-shadow: 0 0 15px rgba(0,255,255,0.3), 
+                0 0 30px rgba(255,0,255,0.2);
+  }
+  .neon-title {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0,255,255,0.8),
+                 0 0 20px rgba(255,0,255,0.6),
+                 0 0 40px rgba(0,255,255,0.4);
+  }
+  
+  .neon-bubble {
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    display: inline-block;
+  }
+  
+  .neon-panel {
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(0,255,255,0.3),
+                0 0 30px rgba(255,0,255,0.2);
+  }
+  

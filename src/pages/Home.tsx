@@ -1,9 +1,9 @@
-// Home.tsx
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Globe, Briefcase, Dumbbell, Star } from "lucide-react";
+import HeaderSection from "../components/HeaderSection";
 
-const services = [
+const slides = [
   {
     text: "Creazione siti web rapidi ed efficaci",
     bg: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1600&q=80",
@@ -23,42 +23,27 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % services.length);
+      setIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-      {/* HERO rotante */}
-      <header className="relative h-[40vh] flex items-center justify-center text-center overflow-hidden">
-        <img
-          src={services[index].bg}
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-white px-6">
-          <p className="text-3xl md:text-5xl font-bold drop-shadow-lg">
-            {services[index].text}
-          </p>
-        </div>
-      </header>
+      {/* HEADER WEBONDAY */}
+      <HeaderSection
+        title="WebOnDay"
+        subtitle={
+          <>
+            Attiva <span className="font-bold text-blue-600">WebOn25</span> e ottieni il{" "}
+            <span className="font-bold">25% di sconto</span> su consulenza e servizi,
+            se attivi entro il{" "}
+            <span className="text-red-600 font-semibold">31/12/2025</span>.
+          </>
+        }
+      />
 
-      {/* HEADER PROMO */}
-      <section className="py-16 bg-gray-100 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">
-          WebOnDay
-        </h1>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          Attiva <span className="font-bold text-blue-600">WebOn25</span> e ottieni il{" "}
-          <span className="font-bold">25% di sconto</span> sulla nostra consulenza
-          e su tutti i servizi, se attivi entro il{" "}
-          <span className="text-red-600 font-semibold">31/12/2025</span>.
-        </p>
-      </section>
-
-      {/* SEZIONE SERVIZI */}
+      {/* SERVIZI */}
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">
           I nostri servizi
@@ -111,6 +96,21 @@ export default function Home() {
               Scopri di più
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* SLIDER ROTANTE PRIMA DEL FOOTER */}
+      <section className="relative h-[40vh] flex items-center justify-center text-center overflow-hidden">
+        <img
+          src={slides[index].bg}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-white px-6">
+          <p className="text-3xl md:text-5xl font-bold drop-shadow-lg">
+            {slides[index].text}
+          </p>
         </div>
       </section>
     </div>

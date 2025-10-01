@@ -3,65 +3,80 @@ import founderImg from "../assets/founder.png";
 
 export default function ChiSiamo() {
   return (
-    <div className="bg-gray-50">
-      {/* HERO HEADER */}
-      <div className="relative h-[75vh] flex items-center justify-center text-center overflow-hidden">
-        <img
-          src="/WebOnDayHeader.png"
-          alt="WebOnDay Header"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
+    <div className="bg-gray-950 min-h-screen text-white">
+      {/* HERO FUTURISTICO */}
+      <header className="relative text-center py-20 bg-gradient-to-r from-purple-800 via-pink-600 to-blue-700">
+        <h1 className="text-5xl md:text-7xl font-extrabold neon-title mb-6">
+          🚀 WebOnDay 2025
+        </h1>
+        <p className="max-w-3xl mx-auto text-xl neon-bubble">
+          Proiettati nel futuro ,  abbiamo percorso il web come pionieri.  
+          Oggi siamo una realtà **cyber-digitale** che trasforma aziende in leggende.
+        </p>
+      </header>
 
-      <div className="py-20 px-6 max-w-6xl mx-auto space-y-20">
-        {/* FOUNDER */}
-        <section className="flex flex-col md:flex-row items-center gap-10 bg-white shadow-lg rounded-2xl p-8">
-          <div className="flex-shrink-0">
+      <main className="max-w-6xl mx-auto px-6 py-20 space-y-20">
+        {/* FOUNDER FUTURISTICO */}
+        <section className="relative bg-gray-900/70 rounded-3xl shadow-xl p-8 border border-cyan-400 backdrop-blur neon-panel">
+          <div className="flex flex-col md:flex-row items-center gap-10">
             <img
               src={founderImg}
               alt="Francesco Maggi Founder WebOnDay"
-              className="w-40 h-40 object-cover rounded-full shadow-md"
+              className="w-40 h-40 object-cover rounded-full border-4 border-cyan-400 shadow-lg"
             />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-2">Chi sono</h2>
-            <h3 className="text-lg font-semibold text-gray-700 mb-4">
-              Francesco Maggi — Founder di WebOnDay
-            </h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Ho lavorato per molti anni nella <strong>ristorazione</strong>, un ambiente che mi ha
-              insegnato concretezza, creatività e capacità di affrontare le sfide quotidiane.  
-              Successivamente ho conseguito il diploma di <strong>tecnico alberghiero</strong>, 
-              che mi ha permesso di perfezionare e consolidare le mie competenze e di ottenere 
-              la qualifica per gestire attività in autonomia.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Parallelamente mi sono appassionato al <strong>fitness e al bodybuilding</strong>, 
-              esperienze che mi hanno trasmesso disciplina, costanza e orientamento agli obiettivi.  
-              Dopo un incidente che mi ha costretto a fermarmi, ho deciso di dedicarmi pienamente 
-              a un’altra passione che avevo sin da ragazzo: l’informatica.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Dai primi esperimenti con <strong>HTML e Java</strong> sono arrivato a specializzarmi in 
-              <strong> JavaScript, TypeScript, React e database</strong>.  
-              Oggi WebOnDay è l’estensione diretta delle mie competenze: ciò che so fare io, 
-              lo fa anche la mia azienda. Non offro servizi impersonali, ma soluzioni pratiche, 
-              umane e tecniche, costruite su misura.
-            </p>
+            <div>
+              <h2 className="text-4xl font-bold text-cyan-300 neon-title mb-2">
+                Francesco Maggi
+              </h2>
+              <h3 className="text-lg font-semibold text-pink-400 mb-4">
+                Visionario & Cyber-Founder
+              </h3>
+              <p className="text-gray-300 leading-relaxed neon-bubble">
+                ⚡ “Nel 2045, il digitale non è più solo tecnologia: è **coscienza collettiva**.  
+                WebOnDay non crea solo siti, ma portali verso realtà parallele.”  
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* OBIETTIVO */}
-        <section className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Il mio obiettivo</h3>
-          <p className="text-gray-700 max-w-2xl mx-auto">
-            Offrire consulenze mirate e soluzioni digitali immediate per far crescere la tua attività, 
-            con trasparenza, innovazione e passione.  
-            WebOnDay non è un’azienda impersonale: è il mio percorso, messo al servizio del tuo progetto.
+        {/* MISSIONE FUTURISTICA */}
+        <section className="bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-800 rounded-3xl border border-fuchsia-400 shadow-2xl p-10 neon-panel text-center">
+          <h2 className="text-4xl font-bold text-yellow-300 neon-title mb-6">
+            🌌 La Missione 2045
+          </h2>
+          <p className="text-lg text-gray-100 neon-bubble">
+            Non digitalizziamo più aziende:  
+            **le proiettiamo nel metaverso**.  
+            Creiamo mondi immersivi dove brand e clienti interagiscono in modo naturale,  
+            etico e sostenibile.  
           </p>
         </section>
-      </div>
+
+        {/* TEAM FUTURISTICO */}
+        <section className="grid md:grid-cols-3 gap-8">
+          <div className="p-6 bg-gray-900/80 rounded-xl border border-blue-500 shadow-lg neon-panel text-center">
+            <p className="text-6xl">🤖</p>
+            <h3 className="text-xl font-bold text-blue-300 mt-2">Coders Synth</h3>
+            <p className="text-gray-300 neon-bubble">
+              Programmiamo con AI quantistica. I nostri codici vivono e respirano.
+            </p>
+          </div>
+          <div className="p-6 bg-gray-900/80 rounded-xl border border-pink-500 shadow-lg neon-panel text-center">
+            <p className="text-6xl">🎨</p>
+            <h3 className="text-xl font-bold text-pink-300 mt-2">Creativi Olografici</h3>
+            <p className="text-gray-300 neon-bubble">
+              Design in 5D. Le interfacce non si guardano, si attraversano.
+            </p>
+          </div>
+          <div className="p-6 bg-gray-900/80 rounded-xl border border-cyan-500 shadow-lg neon-panel text-center">
+            <p className="text-6xl">📡</p>
+            <h3 className="text-xl font-bold text-cyan-300 mt-2">Comunic-AI</h3>
+            <p className="text-gray-300 neon-bubble">
+              I tuoi messaggi vengono trasmessi in tempo reale in tutta la rete neurale globale.
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
