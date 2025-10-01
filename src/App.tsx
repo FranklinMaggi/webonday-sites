@@ -1,48 +1,77 @@
-import logo from "./assets/logo.png";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import DigitalMarketing from "./pages/DigitalMarketing";
 import PersonalTraining from "./pages/PersonalTraining";
 import ChiSiamo from "./pages/ChiSiamo";
 import Contatti from "./pages/Contatti";
+import CreazioneSiti from "./pages/CreazioneSitiWeb";
+import Mission from "./pages/Mission";
 
 function App() {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // scroll down → nascondi navbar
+        setShowNavbar(false);
+      } else {
+        // scroll up → mostra navbar
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col font-sans bg-gray-50">
-        {/* NAVBAR */}
-        <nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow z-50">
+        {/* NAVBAR con effetto scomparsa */}
+        <nav
+          className={`fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow z-50 transition-transform duration-300 ${
+            showNavbar ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src={logo} alt="WebOnDay logo" className="h-10 w-auto" />
-              <span className="text-xl font-bold text-blue-600">WebOnDay</span>
-            </div>
-            <ul className="hidden md:flex gap-6 font-medium text-gray-700">
-              <li><Link to="/" className="hover:text-blue-600 transition">Home</Link></li>
-              <li><Link to="/chi-siamo" className="hover:text-blue-600 transition">Chi Siamo</Link></li>
-              <li><Link to="/contatti" className="hover:text-blue-600 transition">Contatti</Link></li>
+            <span className="text-xl font-bold text-blue-600">WebOnDay</span>
+            <ul className="flex gap-6 font-medium text-gray-700">
+              <li>
+                <Link to="/" className="hover:text-blue-600 transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/chi-siamo" className="hover:text-blue-600 transition">
+                  Chi Siamo
+                </Link>
+              </li>
+              <li>
+                <Link to="/mission" className="hover:text-blue-600 transition">
+                  Mission
+                </Link>
+              </li>
             </ul>
-            <Link
-              to="/contatti"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              Contattaci
-            </Link>
           </div>
         </nav>
 
         {/* ROUTES */}
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chi-siamo" element={<ChiSiamo />} />
+            <Route path="/mission" element={<Mission />} />
             <Route path="/contatti" element={<Contatti />} />
             <Route path="/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/personal-training" element={<PersonalTraining />} />
+            <Route path="/creazione-siti" element={<CreazioneSiti />} />
           </Routes>
         </main>
 
-        {/* FOOTER */}
+        {/* FOOTER (rimane uguale) */}
         <footer className="bg-gray-900 text-gray-300 py-10 mt-auto">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
             <div>
