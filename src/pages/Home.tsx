@@ -1,6 +1,7 @@
+// Home.tsx
 import { useState, useEffect } from "react";
-import { Globe, Briefcase, Dumbbell } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Globe, Briefcase, Dumbbell, Star } from "lucide-react";
 
 const services = [
   {
@@ -34,7 +35,7 @@ export default function Home() {
         <img
           src={services[index].bg}
           alt="Background"
-          className=" absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-white px-6">
@@ -44,69 +45,72 @@ export default function Home() {
         </div>
       </header>
 
+      {/* HEADER PROMO */}
+      <section className="py-16 bg-gray-100 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">
+          WebOnDay
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Attiva <span className="font-bold text-blue-600">WebOn25</span> e ottieni il{" "}
+          <span className="font-bold">25% di sconto</span> sulla nostra consulenza
+          e su tutti i servizi, se attivi entro il{" "}
+          <span className="text-red-600 font-semibold">31/12/2025</span>.
+        </p>
+      </section>
+
       {/* SEZIONE SERVIZI */}
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">
           I nostri servizi
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-         {/* Siti Web */}
-<div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
-  <Globe className="w-12 h-12 text-blue-600 mb-4" />
-  <h3 className="text-xl font-semibold mb-2">Siti Web</h3>
-  <p className="text-gray-600 mb-4">
-    Pacchetto base: sviluppo siti rapidi, leggeri e professionali. Email aziendale inclusa.
-  </p>
-  <Link
-    to="/creazione-siti" 
-    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-  >
-    Scopri di più
-  </Link>
-</div>
-
-          {/* Digital Marketing */}
-          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
-            <Briefcase className="w-12 h-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Digital Marketing</h3>
-            <p className="text-gray-600 mb-4">
-              Consulenze strategiche: branding, SEO, social ads, roadmap digitale.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Siti Web */}
+          <div className="p-6 bg-white rounded-2xl shadow flex flex-col text-center hover:shadow-lg hover:scale-105 transition">
+            <Globe className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Siti Web</h3>
+            <p className="text-gray-600 flex-grow">
+              Pacchetto base da 100€ + 3€/mese. Email aziendale inclusa.
             </p>
-            <Link
-              to="/digital-marketing"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
+            <Link to="/creazione-siti" className="btn-primary mt-4">
+              Scopri di più
+            </Link>
+          </div>
+
+          {/* Consulenza Digitale */}
+          <div className="p-6 bg-white rounded-2xl shadow flex flex-col text-center hover:shadow-lg hover:scale-105 transition">
+            <Briefcase className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Consulenza Digitale</h3>
+            <p className="text-gray-600 flex-grow">
+              Branding, SEO, social ads, roadmap. Da 80€, scontato a 50€ fino al 2026.
+            </p>
+            <Link to="/digital-marketing" className="btn-primary mt-4">
               Scopri di più
             </Link>
           </div>
 
           {/* Personal Training */}
-          <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition flex flex-col items-center text-center">
-            <Dumbbell className="w-12 h-12 text-blue-600 mb-4" />
+          <div className="p-6 bg-white rounded-2xl shadow flex flex-col text-center hover:shadow-lg hover:scale-105 transition">
+            <Dumbbell className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
             <h3 className="text-xl font-semibold mb-2">Personal Training</h3>
-            <p className="text-gray-600 mb-4">
-              Collaborazioni per palestre e coach: servizi digitali e organizzativi.
+            <p className="text-gray-600 flex-grow">
+              Collaborazioni per palestre e coach. Da 120€/mese per sempre.
             </p>
-            <Link
-              to="/personal-training"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
+            <Link to="/personal-training" className="btn-primary mt-4">
               Scopri di più
             </Link>
           </div>
-        </div>
-      </section>
 
-    
-
-      {/* PARTNERS */}
-      <section className="py-16 bg-gray-100 text-center">
-        <h2 className="text-3xl font-bold text-blue-600 mb-10">I nostri Partners</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div className="p-4 bg-white shadow rounded-lg">Firestore</div>
-          <div className="p-4 bg-white shadow rounded-lg">PayPal</div>
-          <div className="p-4 bg-white shadow rounded-lg">Sportal</div>
-          <div className="p-4 bg-white shadow rounded-lg">PalApps</div>
+          {/* Sponsorship */}
+          <div className="p-6 bg-white rounded-2xl shadow flex flex-col text-center hover:shadow-lg hover:scale-105 transition">
+            <Star className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
+            <h3 className="text-xl font-semibold mb-2">Sponsorship</h3>
+            <p className="text-gray-600 flex-grow">
+              Da 50€/mese. Incluso pacchetto base + 5 consulenze digitali annue per i tuoi contatti.
+            </p>
+            <Link to="/sponsorship" className="btn-primary mt-4">
+              Scopri di più
+            </Link>
+          </div>
         </div>
       </section>
     </div>
