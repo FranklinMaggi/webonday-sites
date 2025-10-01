@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WebOnDay</title>
+    <script>
+      // Quando GitHub Pages non trova un file, arriva qui.
+      // Facciamo redirect verso index.html mantenendo la path.
+      sessionStorage.redirect = location.href;
+      location.href = "/";
+    </script>
+  </head>
+  <body></body>
+</html>
