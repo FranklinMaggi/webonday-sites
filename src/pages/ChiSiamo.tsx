@@ -29,10 +29,10 @@ export default function ChiSiamo() {
                 Francesco Maggi
               </h2>
               <h3 className="text-lg font-semibold text-pink-400 mb-4">
-                Visionario & Cyber-Founder
+                Creator & Cyber-Founder
               </h3>
               <p className="text-gray-300 leading-relaxed neon-bubble">
-                ⚡ “Nel 2045, il digitale non è più solo tecnologia: è **coscienza collettiva**.  
+                ⚡ “Nel 2025, il digitale non è più solo tecnologia: è **coscienza collettiva**.  
                 WebOnDay non crea solo siti, ma portali verso realtà parallele.”  
               </p>
             </div>
