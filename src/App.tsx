@@ -5,7 +5,7 @@ import DigitalMarketing from "./pages/DigitalMarketing";
 import PersonalTraining from "./pages/PersonalTraining";
 import ChiSiamo from "./pages/ChiSiamo";
 import Contatti from "./pages/Contatti";
-import CreazioneSiti from "./pages/CreazioneSitiWeb";
+import CreazioneSiti from "./pages/CreazioneSiti";
 import Mission from "./pages/Mission";
 import Azienda from "./pages/Azienda"; 
 import Sponsorship from "./pages/Sponsorship"; // nuova pagina
