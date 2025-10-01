@@ -42,7 +42,7 @@ export default function ChiSiamo() {
         {/* MISSIONE FUTURISTICA */}
         <section className="bg-gradient-to-r from-pink-600 via-purple-700 to-indigo-800 rounded-3xl border border-fuchsia-400 shadow-2xl p-10 neon-panel text-center">
           <h2 className="text-4xl font-bold text-yellow-300 neon-title mb-6">
-            🌌 La Missione 2045
+            🌌 La Missione 2026
           </h2>
           <p className="text-lg text-gray-100 neon-bubble">
             Non digitalizziamo più aziende:  
