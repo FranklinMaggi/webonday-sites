@@ -33,7 +33,7 @@ export default function Home() {
       {/* HEADER WEBONDAY */}
       <HeaderSection
         title="WebOnDay"
-        subtitle={
+       title="Contattaci" subtitle={
           <>
             Attiva <span className="font-bold text-blue-600">WebOn25</span> e ottieni il{" "}
             <span className="font-bold">25% di sconto</span> su consulenza e servizi,
@@ -54,7 +54,7 @@ export default function Home() {
             <Globe className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
             <h3 className="text-xl font-semibold mb-2">Siti Web</h3>
             <p className="text-gray-600 flex-grow">
-              Pacchetto base da 100€ + 3€/mese. Email aziendale inclusa.
+              Pacchetto base . Email aziendale inclusa.
             </p>
             <Link to="/creazione-siti" className="btn-primary mt-4">
               Scopri di più
@@ -78,7 +78,7 @@ export default function Home() {
             <Dumbbell className="w-12 h-12 text-blue-600 mb-4 mx-auto" />
             <h3 className="text-xl font-semibold mb-2">Personal Training</h3>
             <p className="text-gray-600 flex-grow">
-              Collaborazioni per palestre e coach. Da 120€/mese per sempre.
+              Collaborazioni per palestre e coach. Da 320€/mese per sempre.
             </p>
             <Link to="/personal-training" className="btn-primary mt-4">
               Scopri di più

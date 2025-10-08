@@ -9,6 +9,10 @@ import CreazioneSiti from "./pages/CreazioneSiti";
 import Mission from "./pages/Mission";
 import Azienda from "./pages/Azienda"; 
 import Sponsorship from "./pages/Sponsorship"; // nuova pagina
+import DettagliBase from "./pages/DettagliBase";
+import DettagliProfessional from "./pages/DettagliProfessional";
+import DettagliAdvanced from "./pages/DettagliAdvanced";
+import DettagliHoreca from "./pages/DettagliHoreca";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -99,58 +103,66 @@ function App() {
             <Route path="/personal-training" element={<PersonalTraining />} />
             <Route path="/creazione-siti" element={<CreazioneSiti />} />
             <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route path="/dettagli-base" element={<DettagliBase />} />
+            <Route path="/dettagli-professional" element={<DettagliProfessional />} />
+            <Route path="/dettagli-advanced" element={<DettagliAdvanced />} />
+            <Route path="/dettagli-horeca" element={<DettagliHoreca />} />
+
           </Routes>
         </main>
 
-        {/* FOOTER */}
-        <footer className="bg-gray-900 text-gray-300 py-10 mt-auto">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
-            {/* CHI SIAMO */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Chi siamo</h4>
-              <ul className="space-y-2">
-                <li><Link to="/azienda" className="hover:text-white">Azienda</Link></li>
-                <li><Link to="/chi-siamo" className="hover:text-white">Founder</Link></li>
-              </ul>
-            </div>
+       {/* FOOTER UNIFICATO */}
+<footer className="relative bg-gray-950 text-gray-300 py-12 mt-auto border-t border-cyan-900/40">
+  <div className="absolute inset-0 bg-gradient-to-r from-cyan-800/20 via-fuchsia-800/20 to-blue-800/20 blur-3xl opacity-30"></div>
 
-            {/* PARTNERS */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Partners</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Collaborazioni</a></li>
-                <li><a href="#" className="hover:text-white">Diventa partner</a></li>
-              </ul>
-            </div>
+  <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+    {/* CHI SIAMO */}
+    <div>
+      <h4 className="text-cyan-300 font-semibold mb-3 neon-title">Chi siamo</h4>
+      <ul className="space-y-2">
+        <li><a href="/azienda" className="hover:text-white">Azienda</a></li>
+        <li><a href="/chi-siamo" className="hover:text-white">Founder</a></li>
+      </ul>
+    </div>
 
-            {/* PROGETTI */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Progetti</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Crowdfunding</a></li>
-                <li><a href="#" className="hover:text-white">DigitalDay</a></li>
-              </ul>
-            </div>
+    {/* PARTNERS */}
+    <div>
+      <h4 className="text-pink-300 font-semibold mb-3 neon-title">Partners</h4>
+      <ul className="space-y-2">
+        <li><a href="#" className="hover:text-white">Collaborazioni</a></li>
+        <li><a href="#" className="hover:text-white">Diventa partner</a></li>
+      </ul>
+    </div>
 
-            {/* CONTATTI */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Contatti</h4>
-              <ul className="space-y-2">
-                <li><a href="mailto:info@webonday.it" className="hover:text-white">info@webonday.it</a></li>
-                <li><a href="tel:+393801888965" className="hover:text-white">+39 380 1888965</a></li>
-              </ul>
-            </div>
+    {/* CONTATTI */}
+    <div>
+      <h4 className="text-blue-300 font-semibold mb-3 neon-title">Contatti</h4>
+      <ul className="space-y-2">
+        <li>
+          <a href="mailto:info@webonday.it" className="hover:text-white">
+            info@webonday.it
+          </a>
+        </li>
+        <li>
+          <a href="tel:+393801888965" className="hover:text-white">
+            +39 380 1888965
+          </a>
+        </li>
+      </ul>
+    </div>
 
-            {/* LOCATION */}
-            <div>
-              <h4 className="text-white font-semibold mb-3">Location</h4>
-              <p>Bari, Puglia, Italia</p>
-            </div>
-          </div>
-          <div className="text-center text-gray-500 text-xs mt-8">
-            © {new Date().getFullYear()} WebOnDay — Tutti i diritti riservati
-          </div>
-        </footer>
+    {/* LOCATION */}
+    <div>
+      <h4 className="text-fuchsia-300 font-semibold mb-3 neon-title">Location</h4>
+      <p>Bari, Puglia, Italia</p>
+    </div>
+  </div>
+
+  <div className="relative z-10 text-center text-gray-500 text-xs mt-10 border-t border-cyan-800/30 pt-4">
+    © {new Date().getFullYear()} WebOnDay — Tutti i diritti riservati
+  </div>
+</footer>
+
       </div>
     </Router>
   );

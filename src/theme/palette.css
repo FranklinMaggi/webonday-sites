@@ -1,0 +1,23 @@
+/* === Brand Palette WebOnDay === */
+:root {
+    --brand-blue: #2563EB;
+    --brand-cyan: #06B6D4;
+    --brand-fuchsia: #D946EF;
+    --brand-purple: #7C3AED;
+    --brand-orange: #FB923C;
+    --brand-pink: #EC4899;
+  }
+  
+  /* Usa le variabili nei gradienti globali */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-fuchsia), var(--brand-cyan));
+  }
+  
+  .text-brand {
+    color: var(--brand-cyan);
+  }
+  
+  .border-brand {
+    border-color: var(--brand-cyan);
+  }
+  

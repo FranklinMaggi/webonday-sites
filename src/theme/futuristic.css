@@ -1,0 +1,46 @@
+/* === THEME: Futuristic / Mission / Neon === */
+@layer components {
+    .futuristic-bg {
+      @apply bg-gray-950 relative text-white overflow-hidden;
+    }
+  
+    .futuristic-gradient {
+      @apply absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-800 to-fuchsia-800 opacity-40 mix-blend-overlay;
+    }
+  
+    .futuristic-card {
+      @apply bg-gray-900/70 backdrop-blur-lg border border-cyan-400 rounded-2xl p-8 
+             shadow-lg hover:shadow-cyan-400/30 transition duration-300 neon-panel;
+    }
+  
+    .futuristic-header {
+      @apply text-5xl md:text-6xl font-extrabold neon-title text-cyan-300 text-center mb-6;
+    }
+  
+    .futuristic-subtitle {
+      @apply text-lg md:text-xl text-gray-300 neon-bubble text-center max-w-3xl mx-auto;
+    }
+  
+    .futuristic-section-title {
+      @apply text-3xl font-bold text-fuchsia-300 neon-title mb-8 text-center;
+    }
+  
+    .btn-futuristic {
+      @apply inline-block mt-6 px-5 py-2 bg-cyan-500 text-white rounded-lg 
+             hover:bg-cyan-400 transition shadow shadow-cyan-400/30;
+    }
+  
+    .animate-pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(0,255,255,0.3), 0 0 40px rgba(255,0,255,0.2);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(0,255,255,0.5), 0 0 80px rgba(255,0,255,0.4);
+    }
+  }
+  
